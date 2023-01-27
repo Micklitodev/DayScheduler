@@ -2,11 +2,12 @@
 
 ## Link
 
-Click [here]() to go to the live link.
+Click [- here -](https://micklitodev.github.io/DayScheduler/) to go to the live link.
 
 ## ScreenShot
 
-![Screenshot of live javascript quiz.]()
+![Screenshot of live DayScheduler jQuery App.](./assets/images/DSss1.png)
+![Screenshot of live DayScheduler jQuery App.](./assets/images/DSss2.png)
 
 ## Description
 
