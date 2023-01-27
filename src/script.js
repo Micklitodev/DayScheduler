@@ -1,24 +1,25 @@
+// ----------- global variable declarations --------
 var buttonEl = $(".btn");
 var HeaderEl = $("#currentDay");
 
+
+// ------------ Wrapper that prevents jquery loading before the html is complete -------------
 $(document).ready(function () {
   var buttonEl = $(".btn");
 
+
+// ------------- Event listner with conditional check where to set the local storage to the value of origin of the click --------- 
   $(function () {
     buttonEl.on("click", function () {
       var target = $(this).parent().children().eq(1).val();
       if ($(this).parent().attr("id") === "hour-9") {
         localStorage.setItem("hr9", target);
-        console.log("bigfuckingbrainboi");
       } else if ($(this).parent().attr("id") === "hour-10") {
         localStorage.setItem("hr10", target);
-        console.log("massivebrainnoodlechamp");
       } else if ($(this).parent().attr("id") === "hour-11") {
         localStorage.setItem("hr11", target);
-        console.log("just the biggest fking brains ever");
       } else if ($(this).parent().attr("id") === "hour-12") {
         localStorage.setItem("hr12", target);
-        console.log("MONGO LARGE BRAIN BOI");
       } else if ($(this).parent().attr("id") === "hour-1") {
         localStorage.setItem("hr1", target);
       } else if ($(this).parent().attr("id") === "hour-2") {
@@ -33,6 +34,8 @@ $(document).ready(function () {
     });
   });
 
+
+// ---------  renders the input by getting current local storage vals and using dom traversal to target element to change threw .text -----------
   $(function renderInput() {
     var currenthr9 = localStorage.getItem("hr9");
     buttonEl.parent().children().eq(1).text(currenthr9);
@@ -62,15 +65,22 @@ $(document).ready(function () {
     buttonEl.parent().children().eq(25).text(currenthr5);
   });
 
+
+// ------  sets variable currentDay to instantiated dayjs function with format parameter then uses variable to set .text of the headerEl as varaible value --------------
   $(function headerDate() {
     var currentDay = dayjs().format("M /DD /YYYY");
     HeaderEl.text(currentDay);
   });
 
+
+// ---- sets var currenHour  to instantiated dayjs function with format paramter of Hour then uses conditional and attribute to change
+// style properties of the element. -----
   $(function timeColorChanger() {
     setInterval(function () {
       var currentHour = dayjs().format("H");
-      // currentHour = 10
+
+      // currentHour = 10 // --  test input. not for anythin other than testing app functionality.
+
       var hour9 = $("#hour-9");
       var hour10 = $("#hour-10");
       var hour11 = $("#hour-11");
@@ -153,6 +163,8 @@ $(document).ready(function () {
         hour5.attr("class", "row time-block future");
       }
 
+      
+      // conditional that check if hour is equal to 18 and resets textdisplayed and local storage values. 
       if (currentHour == 18) {
         var hours = [
           hour9,
@@ -185,4 +197,3 @@ $(document).ready(function () {
     }, 100);
   });
 });
-
