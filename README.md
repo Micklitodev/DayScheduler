@@ -1,8 +1,8 @@
-# DayScheduler 
+# JqueryDayScheduler 
 
 ## Link
 
-Click [- here -](https://micklitodev.github.io/DayScheduler/) to go to the live link.
+Click [- here -](https://micklitodev.github.io/JQueryDayScheduler/) to go to the live link.
 
 ## ScreenShot
 
